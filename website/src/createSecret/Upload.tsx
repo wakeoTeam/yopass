@@ -32,7 +32,7 @@ const Upload = () => {
       secret: '',
       password: '',
       expiration: '3600',
-      onetime: true,
+      onetime: false,
     },
   });
 
@@ -114,9 +114,9 @@ const Upload = () => {
               {t('upload.caption')}
             </Typography>
           </Grid>
-          <Grid container justifyContent="center">
+          <Grid container justifyContent="center" marginTop={2}>
             <FontAwesomeIcon
-              color={isDragActive ? 'blue' : 'black'}
+              color={isDragActive ? 'primary' : 'grey.300'}
               size="8x"
               icon={faFileUpload}
             />

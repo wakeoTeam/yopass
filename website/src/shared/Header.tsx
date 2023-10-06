@@ -10,39 +10,34 @@ export const Header = () => {
   const home = base + '/#/';
   const upload = base + '/#/upload';
   return (
-    <AppBar position="static" color="transparent" sx={{ marginBottom: 4 }}>
+    <AppBar
+      position="static"
+      color="transparent"
+      sx={{
+        marginBottom: 4,
+        boxShadow: 0,
+        borderBottom: 1,
+        borderColor: 'grey.300'
+      }}
+    >
       <Toolbar>
         <Link href={home} color="inherit" underline="none">
           <Typography variant="h6" component="div">
-            Yopass
             <Box
               sx={{
                 verticalAlign: 'middle',
-                paddingLeft: '5px',
-                width: '40px',
-                height: '40px',
+                paddingRight: '25px',
+                marginTop: '-5px',
+                height: '30px',
               }}
               component="img"
               height="40"
               alt=""
-              src="yopass.svg"
+              src="wakeo.png"
             />
+            Secrets Sharing Tool
           </Typography>
         </Link>
-        <Box
-          sx={{
-            marginLeft: 'auto',
-          }}
-        >
-          <Button
-            component={Link}
-            href={isOnUploadPage ? home : upload}
-            variant="contained"
-            color="primary"
-          >
-            {isOnUploadPage ? t('header.buttonHome') : t('header.buttonUpload')}
-          </Button>
-        </Box>
       </Toolbar>
     </AppBar>
   );

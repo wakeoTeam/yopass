@@ -34,7 +34,7 @@ const CreateSecret = () => {
     defaultValues: {
       generateDecryptionKey: true,
       secret: '',
-      onetime: true,
+      onetime: false,
     },
   });
   const [loading, setLoading] = useState(false);
@@ -114,7 +114,7 @@ const CreateSecret = () => {
                 margin="dense"
                 fullWidth
                 label={t('create.inputSecretLabel')}
-                rows="4"
+                rows="7"
                 autoFocus={true}
                 onKeyDown={onKeyDown}
                 placeholder={t<string>('create.inputSecretPlaceholder')}
@@ -138,6 +138,7 @@ const CreateSecret = () => {
                 onClick={() => handleSubmit(onSubmit)()}
                 variant="contained"
                 disabled={loading}
+                sx={{ color: 'white' }}
               >
                 {loading ? (
                   <span>{t('create.buttonEncryptLoading')}</span>
@@ -167,7 +168,7 @@ export const OneTime = (props: { control: Control<any> }) => {
               <Checkbox
                 {...field}
                 id="enable-onetime"
-                defaultChecked={true}
+                defaultChecked={false}
                 color="primary"
               />
             )}

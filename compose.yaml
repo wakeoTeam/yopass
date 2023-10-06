@@ -1,0 +1,18 @@
+version: "3.0"
+
+services:
+  memcached:
+    image: memcached
+    restart: always
+    expose:
+      - "11211"
+
+  yopass:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      # target: website
+    restart: always
+    ports:
+      - "127.0.0.1:8080:8080"
+    command: "--memcached=memcached:11211 --port 8080"

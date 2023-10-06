@@ -10,7 +10,7 @@ import (
 	"github.com/gofrs/uuid"
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
-	"github.com/jhaals/yopass/pkg/yopass"
+	"github.com/wakeoTeam/yopass/pkg/yopass"
 	"github.com/prometheus/client_golang/prometheus"
 	"go.uber.org/zap"
 )
@@ -179,7 +179,9 @@ func validExpiration(expiration int32) bool {
 func SecurityHeadersHandler(next http.Handler) http.Handler {
 	csp := []string{
 		"default-src 'self'",
-		"font-src 'self'",
+		"font-src 'self' data:",
+		"img-src 'self' data:",
+		"manifest-src 'self' data:",
 		"form-action 'self'",
 		"frame-ancestors 'none'",
 		"script-src 'self'",

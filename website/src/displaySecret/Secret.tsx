@@ -13,10 +13,11 @@ const RenderSecret = ({ secret }: { readonly secret: string }) => {
   return (
     <div>
       <Typography variant="h4">{t('secret.titleMessage')}</Typography>
-      <Typography>{t('secret.subtitleMessage')}</Typography>
+      <Typography sx={{ marginTop: '1em', marginBottom: '1em' }}>{t('secret.subtitleMessage')}</Typography>
       <Button
         color={copy.error ? 'secondary' : 'primary'}
         onClick={() => copyToClipboard(secret)}
+        sx={{ color: 'white' }}
       >
         <FontAwesomeIcon icon={faCopy} /> {t('secret.buttonCopy')}
       </Button>

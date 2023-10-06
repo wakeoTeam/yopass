@@ -31,7 +31,7 @@ const Result = ({ uuid, password, prefix, customPassword }: ResultProps) => {
   return (
     <Box>
       <Typography variant="h4">{t('result.title')}</Typography>
-      <Typography>
+      <Typography sx={{ marginTop: '1em', marginBottom: '1em' }}>
         {t('result.subtitleDownloadOnce')}
         <br />
         {t('result.subtitleChannel')}
@@ -65,6 +65,7 @@ const Row = ({ label, value }: RowProps) => {
           color={copy.error ? 'secondary' : 'primary'}
           variant="contained"
           onClick={() => copyToClipboard(value)}
+          sx={{ color: 'white' }}
         >
           <FontAwesomeIcon icon={faCopy} />
         </Button>

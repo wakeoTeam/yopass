@@ -52,6 +52,7 @@ const EnterDecryptionKey = ({
           <TextField
             fullWidth
             autoFocus
+            autoComplete="off"
             name="decryptionKey"
             id="decryptionKey"
             placeholder={t<string>('display.inputDecryptionKeyPlaceholder')}
@@ -64,7 +65,11 @@ const EnterDecryptionKey = ({
           />
         </Grid>
         <Grid item xs={12}>
-          <Button variant="contained" onClick={submitPassword}>
+          <Button
+            variant="contained"
+            onClick={submitPassword}
+            sx={{ color: 'white' }}
+          >
             {t('display.buttonDecrypt')}
           </Button>
         </Grid>

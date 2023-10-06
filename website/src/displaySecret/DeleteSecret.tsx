@@ -68,7 +68,12 @@ const DeleteSecret = ({ url }: { readonly url: string }) => {
 
   return (
     <>
-      <Button color="secondary" onClick={handleConfirmOpen} disabled={deleted}>
+      <Button
+        color="secondary"
+        onClick={handleConfirmOpen}
+        disabled={deleted}
+        sx={{ color: 'white' }}
+      >
         <FontAwesomeIcon icon={faTrash} /> {t('delete.buttonDelete')}
       </Button>
 
@@ -93,6 +98,7 @@ const DeleteSecret = ({ url }: { readonly url: string }) => {
             onClick={handleClose}
             color="primary"
             disabled={loading}
+            sx={{ color: 'white' }}
           >
             {t('delete.dialogCancel')}
           </Button>
@@ -101,6 +107,7 @@ const DeleteSecret = ({ url }: { readonly url: string }) => {
             color="primary"
             autoFocus
             disabled={loading}
+            sx={{ color: 'white' }}
           >
             {loading ? t('delete.dialogProgress') : t('delete.dialogConfirm')}
           </Button>
